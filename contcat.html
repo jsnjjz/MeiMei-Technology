@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/zi.css">
+<link rel="stylesheet" href="css/public.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>-->
+</head>
+<body>
+<div class="HeaderOut clearfix">
+	<h1><a href="#"><img src="images/Logo1.png" alt="" title="" /></a></h1>
+	<div class="NavOut">
+		<ul id="NavBox">
+			<li>
+				<a href="index.html">
+					<span>首页</span>
+					<i>HOME</i>
+				</a>
+			</li>
+			<li>
+				<a href="JianJie.html">
+					<span>关于美美</span>
+					<i>About</i>
+				</a>
+			</li>
+			<li>
+				<a href="YouXi2.html">
+					<span>美美游戏</span>
+					<i>Game</i>
+				</a>
+			</li>
+			<li>
+				<a href="ZhuBo2.html">
+					<span>美媚主播</span>
+					<i>Host</i>
+				</a>
+			</li>
+			<li>
+				<a href="DongHua.html">
+					<span>原创动画</span>
+					<i>Animation</i>
+				</a>
+			</li>
+			<li>
+				<a href="recruitment.html">
+					<span>招纳贤士</span>
+					<i>Recruiting</i>
+				</a>
+			</li>
+			<li>
+				<a href="contcat.html">
+					<span>联系我们</span>
+					<i>contact</i>
+				</a>
+			</li>
+		</ul>
+		 <div id="NavLine" class="nav_scroll"></div>
+	</div>
+</div>
+<div class="ContCatMain">
+	<div class="Content clearfix">
+		<div class="CLeft">
+			<h2>
+				<strong>美美互动科技有限公司</strong>
+				<i>Changsha meimei interactive technology co., LTD</i>			</h2>
+			<h3>400-1234-567</h3>
+			<dl>
+				<dt><img src="images/C_1.png" alt="" title="" /></dt>
+				<dd>总机：000-85072945/000-85072945</dd>
+			</dl>
+			<dl>
+				<dt><img src="images/C_2.png" alt="" title="" /></dt>
+				<dd>传真：000-85072945</dd>
+			</dl>
+			<dl>
+				<dt><img src="images/C_3.png" alt="" title="" /></dt>
+				<dd>地址：xxx区xxx大道</dd>
+			</dl>
+			<dl>
+				<dt><img src="images/C_4.png" alt="" title="" /></dt>
+				<dd>邮编：000000</dd>
+			</dl>
+		</div>
+		<div class="CRight">
+		 	<table>
+				<tr>
+					<td>
+						<input type="text" value="姓名" class="Input" />					</td>
+				</tr>
+				<tr>
+					<td><input type="text" value="公司姓名"  class="Input"/></td>
+				</tr>
+				<tr>
+					<td><input type="text" value="联系电话" class="Input"/></td>
+				</tr>
+				<tr>
+					<td><input type="text" value="邮箱地址" class="Input"/></td>
+				</tr>
+				<tr>
+					<td>
+						<textarea class="Input">留言</textarea>					</td>
+				</tr>		
+				<tr>
+					<td>
+						<input type="button" value="提交" class="Btn" />					</td>
+				</tr>		
+			</table>
+		</div>
+	</div>
+</div>
+<div style="width:100%;height:650px;" id="container" tabindex="0"></div>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=9981f1704dd3afbb40fc4a65dbc9b090"></script>
+<script src="https://webapi.amap.com/ui/1.0/main.js?v=1.0.10"></script>
+    
+      <script type="text/javascript">
+        var map = new AMap.Map('container',{
+            resizeEnable: true,
+            zoom: 10,
+            center: [118.798908,32.072357]
+        });
+				
+				
+				AMapUI.loadUI(['overlay/SimpleMarker'], function(SimpleMarker) {
+
+        var lngLats = getGridLngLats(map.getCenter(), 5, 5);
+
+        new SimpleMarker({
+     
+            //自定义图标地址
+            iconStyle: 'https://webapi.amap.com/theme/v1.3/markers/b/mark_r.png',
+
+            //设置基点偏移
+            offset: new AMap.Pixel(-19, -60),
+
+            map: map,
+
+            showPositionPoint: true,
+            position: lngLats[0],
+            zIndex: 100
+        });
+
+       
+    });
+
+    /**
+     * 返回一批网格排列的经纬度
+
+     * @param  {AMap.LngLat} center 网格中心
+     * @param  {number} colNum 列数
+     * @param  {number} size  总数
+     * @param  {number} cellX  横向间距
+     * @param  {number} cellY  竖向间距
+     * @return {Array}  返回经纬度数组
+     */
+    function getGridLngLats(center, colNum, size, cellX, cellY) {
+
+        var pxCenter = map.lnglatToPixel(center);
+
+        var rowNum = Math.ceil(size / colNum);
+
+        var startX = pxCenter.getX(),
+            startY = pxCenter.getY();
+
+        cellX = cellX || 70;
+
+        cellY = cellY || 70;
+
+
+        var lngLats = [];
+
+        for (var r = 0; r < rowNum; r++) {
+
+            for (var c = 0; c < colNum; c++) {
+
+                var x = startX + (c - (colNum - 1) / 2) * (cellX);
+
+                var y = startY + (r - (rowNum - 1) / 2) * (cellY);
+
+                lngLats.push(map.pixelToLngLat(new AMap.Pixel(x, y)));
+
+                if (lngLats.length >= size) {
+                    break;
+                }
+            }
+        }
+        return lngLats;
+    }
+    </script>
+
+<div class="Footer">
+	<div class="FooterMain">
+		<p class="SubNav">
+			<a href="#">首页</a>
+			|
+			<a href="#">关于美美</a>
+			|
+			<a href="#">美美游戏</a>
+			|
+			<a href="#">美媚主播</a>
+			|
+			<a href="#">原创动画</a>
+			|
+			<a href="#">招贤纳士</a>
+			|
+			<a href="#">联系我们</a>
+		</p>
+		<p>健康游戏公告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</p>
+		<p>禁止任何利用本平台游戏进行赌博的行为，让我们共同净化游戏环境，一旦发现有违反用户协议的行为，我们将立即封杀账号！</p>
+		<p>版权所有：美美游戏科技有限公司 ICP备13013049号-1 </p>
+	</div>
+</div>
+<script src="js/Nav.js"></script>
+<script src="js/zi.js"></script>
+</body>
+</html>
