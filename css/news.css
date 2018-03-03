@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.news_pic{width:100px;height:100px;}
+.newsshow_pic{width:100px;height:100px;}
+/*新闻列表固定排版*/
+.news{border-collapse:collapse;margin:auto;width:98%;}
+.news_title{text-align:center; font-size:14px;font-weight:bold;height:26px;}
+.news_title1{width:82%;text-align:center; font-size:12px;font-weight:bold;height:26px;background:#F5F5F5;}
+.news_title2{width:18%;text-align:center; font-size:12px;font-weight:bold;height:26px;background:#F5F5F5;}
+.news_list1,.news_list2{height:26px;}
+.news_content1{text-indent:40px;height:26px;background:url(../images/jt.gif) no-repeat 10px center;}
+.news_content1,.news_content2{border-bottom:1px dashed #cccccc;}
+.news_content2{text-align:center;}
+.news_bottom{}
+.news_bottom1,.news_bottom2,{}
+/*新闻列表自定义排版news_all设置*/
+.news_all{border-collapse:collapse;margin:auto;width:88%;}
+.news_all_list1,.news_all_list2{padding:4px;}
+.news_all_title1,.news_all_title2{width:20%;font-weight:bold;border-bottom:1px dashed #cccccc;text-align:right;}
+.news_all_content1,.news_all_content2{width:80%;border-bottom:1px dashed #cccccc;}
+/*新闻列表翻页*/
+.news_page{border-collapse:collapse;width:99%;margin:auto;padding:4px;}
+.news_page_left{ }
+.news_page_right{text-align:right;}
+.news_page a:link,.news_page a:visited,.news_page a:active{color:#000000; text-decoration:none;}
+.news_page a:hover{color:#0066CC;position:relative;top:1px;}
+.news_page_none{color:#545454;}
+.news_page_default{color:#000000;}
+.news_page_nonce{color:#299AA8; text-decoration:underline;}
+/*新闻详情news_info设置*/
+.news_info{border-collapse:collapse;margin:auto;width:88%;}
+.news_info_list1,.news_info_list2{padding:4px;}
+.news_info_title1,.news_info_title2{width:20%;font-weight:bold;border-bottom:1px dashed #cccccc;text-align:right;}
+.news_info_content1,.news_info_content2{width:80%;border-bottom:1px dashed #cccccc;}
+/* CSS Custom */
+
+.newsshow_set{ width:98%; border-collapse:collapse;margin:auto;}
+.newsshow_top{height:30px;  text-align:center;font-size:14px; font-weight:bold; border-bottom: #cccccc solid 3px;}
+.newsshow_middle{height:35px; text-align:center; font-size:12px; border-bottom: #cccccc dashed 1px;}
+.newsshow_bottom{width:98%; padding-top:15px; line-height:20px; padding-left:10px;padding-right:10px;vertical-align:top;}

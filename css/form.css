@@ -1,0 +1,16 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*留言表单*/
+.message_form{border-collapse:collapse;margin:auto;width:98%;line-height:30px;}/*定义表格属性*/
+.message_form_top{display:none;}/*定义表格列表顶部行属性*/
+.message_form_bottom{display:none;}/*定义表格列表底部行属性*/
+.message_form_list1,.message_form_list2{}/*定义列表行属性*/
+.message_form_list1 input,.message_form_list2 input{background:#f5f5f5;border:1px inset;width:200px;}/*定义列表行文本框属性*/
+.message_form_title1,.message_form_title2{width:25%;text-align:right;text-indent:5px;font-weight:bold;border-bottom:1px dashed #cccccc;
+    background-image: url(../images/jt.gif);
+	background-repeat: no-repeat;
+	background-position: 40px center;}/*定义标题列属性*/
+.message_form_content1,.message_form_content2{width:75%;border-bottom:1px dashed #cccccc;padding:3px 0px 3px 10px;}/*定义列表列属性*/
+.message_form_button{text-align:center;padding:5px 0px;}/*定义表格提交按钮行属性*/
+.message_form_button input{height:22px;font-size:12px;padding:0px 8px;background: url(../images/kuang.jpg) repeat-x; border: solid 1px #B4EAF1;cursor:pointer;color:#000000; margin-top:10px;}/*定义表格提交按钮属性*/
+/* CSS Custom */
